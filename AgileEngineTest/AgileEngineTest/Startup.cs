@@ -24,7 +24,9 @@ namespace AgileEngineTest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
             services.AddControllers();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,7 +38,7 @@ namespace AgileEngineTest
             }
 
             app.UseRouting();
-
+             
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
